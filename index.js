@@ -5,12 +5,16 @@ for (var i = 0; i < numofbuttons; i++) {
         var buttonClicked = this.innerHTML;
 
         makeSound(buttonClicked);
+
+        buttonAnimation(buttonClicked);
     });
 }
 // to send the key pressed on keyboard
 document.addEventListener("keydown", function (event) {
     // added tolowercase in order to work even if the capslock is on 
     makeSound(event.key.toLowerCase());
+
+    buttonAnimation(event.key);
 })
 
 function makeSound(buttonClicked) {
@@ -45,3 +49,14 @@ function makeSound(buttonClicked) {
             break;
     }
 }
+
+function buttonAnimation(pressedKey){
+var activeButton = document.querySelector(`.${pressedKey}`);
+activeButton.classList.add("pressed");
+
+setTimeout(removeFunction, 100)
+function removeFunction(){
+    activeButton.classList.remove("pressed");
+}
+}
+
