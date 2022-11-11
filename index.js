@@ -50,13 +50,5 @@ function makeSound(buttonClicked) {
     }
 }
 
-function buttonAnimation(pressedKey){
-var activeButton = document.querySelector(`.${pressedKey}`);
-activeButton.classList.add("pressed");
 
-setTimeout(removeFunction, 100)
-function removeFunction(){
-    activeButton.classList.remove("pressed");
-}
-}
 
